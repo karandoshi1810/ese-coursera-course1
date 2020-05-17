@@ -9,7 +9,7 @@
  *
  *****************************************************************************/
 /**
- * @file <stats.c>
+ * @file stats.c
  * @brief Basic statistical operations on an array of 40 characters.
  *
  * The given array is of length 40 and some basic operations like finding mean
@@ -36,35 +36,111 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
+  unsigned int len=SIZE;
+  unsigned char *p=&test;
+  unsigned char max,min;
+  float mean=0,median=0;
   /* Statistics and Printing Functions Go Here */
+  mean = find_mean(p,len);
+  median = find_median(p,len);
+  max = find_maximum(p,len);
+  min = find_minimum(p,len,max);
+  print_statistics(max,min,mean,median);
+  printf("Before sorting\n");
+  print_array(p,len);
+  sort_array(p,len);
+  printf("After sorting\n");
+  print_array(p,len);
+}
+
+float find_mean(unsigned char *p,unsigned int len)
+{
+	unsigned int sum=0,i=0;
+	for( i=0;i<len;i++)
+	{
+		sum+=*(p+i);
+	}
+return (float)sum/len;
+}
+
+
+float find_median(unsigned char *p,unsigned int len)
+{
+	if(len%2==0)
+	{
+		return (float) (*(p+((len+1)/2))+*(p+len/2))/2;
+
+	}
+	else
+	{
+		return (float) *(p+((len+1)/2));
+	}
+}
+
+void print_statistics(unsigned char max,unsigned char min,float mean,float median)
+{
+	printf("\nMaximum=%d",max);
+	printf("\nMinimum=%d",min);
+	printf("\nMean=%f",mean);
+	printf("\nMedian=%f\n",median);
 
 }
 
-/* Add other Implementation File Code Here */
-float find_mean(unsigned char *p, unsigned int len){
-    return 0.0;
-}
-
-float find_median(unsigned char *p, unsigned int len){
-    return 0.0;
-}
-void print_statistics()
+void print_array(unsigned char *p,unsigned int len)
 {
-
-}
-void print_array()
-{
+	printf("\n");
+	unsigned int i=0;
+	for(i=0;i<len;i++)
+	{
+		printf("%d,",*(p+i));
+	}
+	printf("\n");
 
 }
-unsigned char find_maximum(unsigned char *p, unsigned int len)
+
+unsigned char find_maximum(unsigned char *p,unsigned int len)
 {
-    return0;
+	unsigned char temp=0;
+	unsigned int i=0;
+	for(i=0;i<len;i++)
+	{
+		if(*(p+i)>temp)
+		{
+			temp=*(p+i);
+		}
+	}
+	return temp;
 }
-unsigned char find_minimum(unsigned char *p, unsigned int len)
+
+unsigned char find_minimum(unsigned char *p,unsigned int len,unsigned char max)
 {
-    return0;
+	unsigned char temp=max;
+	unsigned int i=0;
+	for(i=0;i<len;i++)
+	{
+		if(*(p+i)<temp)
+		{
+			temp=*(p+i);
+		}
+	}
+return temp;
 }
-unsigned int sort_array(unsigned int *p, unsigned int len)
+
+void sort_array(unsigned char *p,unsigned int len)
 {
-    return 0;
+	unsigned char temp=0;
+	unsigned i=0,j=0;
+	for(i=0;i<len;i++)
+	{
+		for(j=i+1;j<=len;j++)
+		{
+		if(p[i]<p[j])
+		{
+			temp=p[i];
+			p[i]=p[j];
+			p[j]=temp;
+		}
+		}
+	}
+
 }
