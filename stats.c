@@ -2,20 +2,20 @@
  * Copyright (C) 2017 by Alex Fosdick - University of Colorado
  *
  * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
+ * forms is permitted as long as the files maintain this copyright. Users are
  * permitted to modify this and use it to learn about the field of embedded
  * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
+ * misuse of this material.
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <stats.c>
+ * @brief Basic statistical operations on an array of 40 characters.
  *
- * <Add Extended Description Here>
- *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * The given array is of length 40 and some basic operations like finding mean
+ *median, maximum, minimum, sorting and printing of array is done in this program.
+ * @author Karan Doshi
+ * @date 17th May 2020
  *
  */
 
@@ -41,3 +41,30 @@ void main() {
 }
 
 /* Add other Implementation File Code Here */
+float find_mean(unsigned char *p, unsigned int len){
+    return 0.0;
+}
+
+float find_median(unsigned char *p, unsigned int len){
+    return 0.0;
+}
+void print_statistics()
+{
+
+}
+void print_array()
+{
+
+}
+unsigned char find_maximum(unsigned char *p, unsigned int len)
+{
+    return0;
+}
+unsigned char find_minimum(unsigned char *p, unsigned int len)
+{
+    return0;
+}
+unsigned int sort_array(unsigned int *p, unsigned int len)
+{
+    return 0;
+}

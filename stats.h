@@ -9,13 +9,13 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <stats.h> 
+ * @brief Basic statistical operations on an array of 40 characters.
  *
- * <Add Extended Description Here>
- *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * The given array is of length 40 and some basic operations like finding mean
+ *median, maximum, minimum, sorting and printing of array is done in this program.
+ * @author Karan Doshi
+ * @date 17th May 2020
  *
  */
 #ifndef __STATS_H__
@@ -23,18 +23,70 @@
 
 /* Add Your Declarations and Function Comments here */ 
 
+float find_mean(unsigned char *p,unsigned int len);
 /**
- * @brief <Add Brief Description of Function Here>
+ * Its job is to calculate mean of array and return result.
  *
- * <Add Extended Description Here>
+ * unsigned char *p  ;to access array and iterate through it.
+ * unsigned int len ;to know about the length for length of loop.
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @return returns a float value, mean of array.
+ */
+float find_median(unsigned char *p,unsigned int len);
+/**
+ * Its job is to calculate median of array and return result.
  *
- * @return <Add Return Informaiton here>
+ * unsigned char *p  ;to access array and iterate through it.
+ * unsigned int len ;to know about the length for length of loop.
+ *
+ * @return returns a float value, median of array.
  */
 
+void print_statistics(unsigned char max,unsigned char min,float mean,float median);
+/**
+ * Its job is to print all statistics calculated in program.
+ *
+ * unsigned char max ;print maximum of array.
+ * unsigned char min ;print minimum of array.
+ * float mean        ;print mean of array.
+ * float median      ;print median of array.
+ */
+
+void print_array(unsigned char *p,unsigned int len);
+/**
+ * Its job is to print the array.
+ *
+ * unsigned char *p  ;to access array and iterate through it.
+ * unsigned int len ;to know about the length for length of loop.
+ */
+
+unsigned char find_maximum(unsigned char *p,unsigned int len);
+/**
+ * Its job is to find maximum from array and return its value.
+ *
+ * unsigned char *p  ;to access array and iterate through it.
+ * unsigned int len ;to know about the length for length of loop.
+ *
+ * @return returns a unsigned char value, maximum of array.
+ */
+
+unsigned char find_minimum(unsigned char *p,unsigned int len,unsigned char max);
+/**
+ * Its job is to find minimum from array and return its value.
+ *
+ * unsigned char *p  ;to access array and iterate through it.
+ * unsigned int len ;to know about the length for length of loop.
+ * unsigned char max;needed to compare temp variable inorder to find miminum value.
+ *
+ * @return returns a unsigned char value, minimum of array.
+ */
+
+void sort_array(unsigned char *p,unsigned int len);
+/**
+ * Its job is to sort the array in descending order.
+ *
+ * unsigned char *p  ;to access array and iterate through it.
+ * unsigned int len ;to know about the length for length of loop.
+ */
 
 #endif /* __STATS_H__ */
